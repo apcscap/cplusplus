@@ -1,4 +1,7 @@
 #include <iostream>
+#include <ctime> // for the time
+#include <cstdlib> // probably to get the rand lib
+
 using namespace std;
 
 int num; // extern keyword says that variable will be 
@@ -120,6 +123,22 @@ int main() {
 
     cout << "After swap, value of a :" << a << endl; // a = 200
     cout << "After swap, value of b :" << b << endl; // b = 100 there was a swap by changing the reference
+
+    // number definitions:
+    short s;
+    int i;
+    long l;
+    float f;
+    double d;
+
+    // number assignments:
+    s = 10;
+    i = 1000; // max : 32767 (*2 if unsigned)
+    l = 1000000;
+    f = 230.47;
+    d = 20949.374;
+
+    // there are also the math/trig funcs
 
     return 0;
 }
