@@ -126,19 +126,25 @@ int main() {
 
     // number definitions:
     short s;
-    int i;
+    int _i;
     long l;
     float f;
     double d;
 
     // number assignments:
     s = 10;
-    i = 1000; // max : 32767 (*2 if unsigned)
+    _i = 1000; // max : 32767 (*2 if unsigned)
     l = 1000000;
     f = 230.47;
     d = 20949.374;
 
     // there are also the math/trig funcs
+
+    // set seed of rand func
+    srand( (unsigned) time(NULL) ); // type casting
+
+    int randNum = rand();
+    cout << "Random number : " << randNum << endl;
 
     return 0;
 }
