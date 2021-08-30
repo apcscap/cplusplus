@@ -6,6 +6,9 @@ int num; // extern keyword says that variable will be
 void func(void); // declare func
 static int counter = 10; // Global var
 
+int _counter;
+extern void write_extern(); // use extern for reference of a global var or func. can only be used for init
+
 // main() program begins execution here
 int main() {
     cout << "Hello World" << endl; // print func
@@ -47,6 +50,9 @@ int main() {
     while(counter--) {
         func();
     }
+
+    _counter = 5;
+    write_extern();
 
     return 0;
 }
