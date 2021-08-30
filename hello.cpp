@@ -11,6 +11,8 @@ extern void write_extern(); // use extern for reference of a global var or func.
                             // can also be written as void write_extern(void) but module.cpp write_extern will have 'extern' keyword
 
 int max(int num1, int num2); // declare a function and param names and types
+void swap_pointer(int *num1, int *num2); // declare a func with pointer var
+void swap_reference(int &num1, int &num2);
 
 // main() program begins execution here
 int main() {
@@ -106,6 +108,19 @@ int main() {
     res = max(a, b);
     cout << "Max value is : " << res << endl;
 
+    swap_pointer(&a, &b); // how to pass in var for a func with pointers 
+
+    cout << "After swap, value of a :" << a << endl; // a = 200
+    cout << "After swap, value of b :" << b << endl; // b = 100 there was a swap in pointers
+
+    a = 100; // reset a and b
+    b = 200;
+
+    swap_reference(a, b); // pass in var with function that has reference type for param
+
+    cout << "After swap, value of a :" << a << endl; // a = 200
+    cout << "After swap, value of b :" << b << endl; // b = 100 there was a swap by changing the reference
+
     return 0;
 }
 
@@ -116,7 +131,7 @@ void func( void ) {
     std::cout << " and count is " << counter << std::endl;
 }
 
-int max(int num1, int num2) {
+int max(int num1, int num2=20) { // can also add default value for func param
     int result;
 
     if (num1 > num2)
@@ -125,4 +140,24 @@ int max(int num1, int num2) {
         result = num2;
 
     return result;
+}
+
+void swap_pointer(int *num1, int *num2) { // the '*' will pass the var pointer thus the setters will change the value the pointer in the var points to.
+    int temp;
+
+    temp = *num1; /* save the value at address x */
+    *num1 = *num2; /* put num2 into num1*/
+    *num2= temp; /* put num1 into num2 */
+
+    return;
+}
+
+void swap_reference(int &num1, int &num2) { // the '&' will copy the reference of the vars that are passed in when the func is called. essentially imagine the original vars replacing the param names
+    int temp;
+
+    temp = num1; 
+    num1 = num2;
+    num2 = temp;
+
+    return;
 }
