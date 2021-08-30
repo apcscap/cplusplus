@@ -13,7 +13,9 @@ int main() {
     cout << "Size of double : " << sizeof(double) << endl;
     cout << "Size of wchar_t : " << sizeof(wchar_t) << endl;
 
-    
+    typedef int feet; // can create a new type of variable with new name
+    feet distance = 4;
+    cout << "Distance : " << distance << endl;
 
     return 0;
 }
