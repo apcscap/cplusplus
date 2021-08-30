@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+int num; // extern keyword says that variable will be 
+
+
 // main() program begins execution here
 int main() {
     cout << "Hello World" << endl; // print func
@@ -22,6 +25,9 @@ int main() {
     cout << "Enum c is : " << c << endl; // prints out 5
     c = blue;
     cout << "Enum c is : " << c << endl; // prints out 6 (default prints index of enum name in {_} but will print value higher than previous as well)
+
+    num = 17;
+    cout << "num is : " << num << endl;
 
     return 0;
 }
