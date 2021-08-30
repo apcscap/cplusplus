@@ -3,12 +3,14 @@ using namespace std;
 
 int num; // extern keyword says that variable will be 
 
-void func(void); // declare func
+void func(void); // declare func and declare param type
 static int counter = 10; // Global var
 
 int _counter;
 extern void write_extern(); // use extern for reference of a global var or func. can only be used for init
                             // can also be written as void write_extern(void) but module.cpp write_extern will have 'extern' keyword
+
+int max(int num1, int num2); // declare a function and param names and types
 
 // main() program begins execution here
 int main() {
@@ -71,6 +73,39 @@ int main() {
         cout << "value of a: " << a << endl;
     }
 
+    int flip = 1;
+    
+    char grade = 'A'; // love it, want it, need it
+    switch(grade) { // example of a switch in c++
+        case 'A' :
+         cout << "Excellent!" << endl; 
+         break; // put break to finish statement. this is optional
+      case 'B' :
+      case 'C' :
+         cout << "Well done" << endl;
+         break;
+      case 'D' :
+         cout << "You passed" << endl;
+         break;
+      case 'F' :
+         cout << "Better try again" << endl;
+         break;
+      default :
+         cout << "Invalid grade" << endl;
+    }
+    cout << "Your grade is : " << grade << endl;
+
+    bool reward;
+    reward = grade == 'A' ? true : false; 
+    cout << "I am getting rewarded : " << to_string(reward) << endl;
+
+    int a = 100;
+    int b = 200;
+    int res;
+
+    res = max(a, b);
+    cout << "Max value is : " << res << endl;
+
     return 0;
 }
 
@@ -79,4 +114,15 @@ void func( void ) {
     i++;
     std::cout << "i is " << i;
     std::cout << " and count is " << counter << std::endl;
+}
+
+int max(int num1, int num2) {
+    int result;
+
+    if (num1 > num2)
+        result = num1;
+    else
+        result = num2;
+
+    return result;
 }
