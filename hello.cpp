@@ -3,6 +3,8 @@ using namespace std;
 
 int num; // extern keyword says that variable will be 
 
+void func(void); // declare func
+static int counter = 10; // Global var
 
 // main() program begins execution here
 int main() {
@@ -29,5 +31,29 @@ int main() {
     num = 17;
     cout << "num is : " << num << endl;
 
+    const feet LENGTH = 10; // create a constant var AKA literal
+    cout << "length is : " << LENGTH << endl;
+
+    // char, int, and double can have modifers signed, unsigned, long, short
+    short int i;
+    short unsigned int j;
+
+    j = 50000;
+    i = j;
+    cout << i << " " << j << endl;
+
+    auto int month; // auto is a storage type meaning only local scope
+    register int miles = 100000000; // register for local var but max size equal to reg size usually one word
+    while(counter--) {
+        func();
+    }
+
     return 0;
+}
+
+void func( void ) {
+    static int i = 5; // this is the local static variable. rather than the variable be destroyed, it is maintained in memory.
+    i++;
+    std::cout << "i is " << i;
+    std::cout << " and count is " << counter << std::endl;
 }
