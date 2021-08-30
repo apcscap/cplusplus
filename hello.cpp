@@ -8,6 +8,7 @@ static int counter = 10; // Global var
 
 int _counter;
 extern void write_extern(); // use extern for reference of a global var or func. can only be used for init
+                            // can also be written as void write_extern(void) but module.cpp write_extern will have 'extern' keyword
 
 // main() program begins execution here
 int main() {
@@ -51,9 +52,20 @@ int main() {
         func();
     }
 
-    _counter = 5;
-    write_extern();
+    _counter = 5; // set global _counter var to five. will be accessible to module 
+    write_extern(); // write_extern declared as a global var in hello.cpp but initialized as void method in module.cpp
 
+    /*
+    A = 0011 1100
+    B = 0000 1101
+    -----------------
+    A&B = 0000 1100 '&' operator will copy bit '1' if exist in both. result: 12 (0000 1100)
+    A|B = 0011 1101 '|' operator will copy bit '1' if exist in either. result: 61 (0011 1101)
+    A^B = 0011 0001 '^' XOR operator will copy bit '1' if exist in one but not other. result: 49 (0011 0001)
+    ~A  = 1100 0011 '~' Ones Complement operator will flip bit. result -61 (1100 0011)
+    A << 2 = 1111 0000 '<<' left shift operator will shift all bits to the left as specified (plus carried over to other end). result: 240 (1111 0000)
+    A >> 2 = 0000 1111 '>>' right shift operator will shift all bits to the right as specified (plus carried over to other end). result: 15 (0000 1111)
+    */
     return 0;
 }
 
