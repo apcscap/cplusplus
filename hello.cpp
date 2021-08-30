@@ -66,6 +66,11 @@ int main() {
     A << 2 = 1111 0000 '<<' left shift operator will shift all bits to the left as specified (plus carried over to other end). result: 240 (1111 0000)
     A >> 2 = 0000 1111 '>>' right shift operator will shift all bits to the right as specified (plus carried over to other end). result: 15 (0000 1111)
     */
+
+    for (int a = 10; a < 20; a = a + 1) { // put it here so i know how to do a for loop :)
+        cout << "value of a: " << a << endl;
+    }
+
     return 0;
 }
 
