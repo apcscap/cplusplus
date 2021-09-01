@@ -23,6 +23,8 @@ void swap_reference(int &num1, int &num2);
 
 double getAverage(double arr[], int size); // declare a func that take array as param.
 
+int *getRandom(); // declare a func that returns a pointer. remember arrays are pointers really.
+
 // main() program begins execution here
 int main() {
     cout << "Hello World" << endl; // print func
@@ -293,6 +295,22 @@ int main() {
         cout << (nums + i) << endl; // cout << (names + i) << endl;
     }
 
+    // oh great you can have a pointer point to a pointer.
+    // make sure that if you're pointing to a pointer use **
+    // but if you're pointing to a pointer that's pointing to an address use ***
+    // https://www.tutorialspoint.com/cplusplus/cpp_pointer_to_pointer.htm
+
+    /* This is how to return an array from a function using pointers */
+
+    // a pointer to an int.
+    int *pntr;
+    
+    pntr = getRandom(); // getRandom will return the address of the first element in the array. Good since storing address in a pointer
+    for ( int i = 0; i < 10; i++ ) {
+        cout << "*(p + " << i << ") : ";
+        cout << *(pntr + i) << endl; // loop through by accessing the adjacent variables by adding a byte to the address
+    }
+
     return 0;
 }
 
@@ -344,4 +362,17 @@ double getAverage(double arr[], int size) { // won't need size if we already kno
     avg = double(sum) / size;
 
     return avg;
+}
+
+int * getRandom() { // this function returns a pointner
+    static int r[10]; // this array must be a static variable because local variables including arrays will be destroyed when function is finished.
+
+    srand((unsigned)time(NULL)); // set seed for time
+
+    for(int i=0; i<10; i++) {
+        r[i] = rand(); // set a random number for ever index in the array
+        cout << r[i] << endl;
+    }
+
+    return r; // return the array which is actually a pointer to the first element in the array. remember, Cap?
 }
