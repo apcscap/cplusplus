@@ -195,7 +195,38 @@ int main() {
     // how to return an array with pointers
     // https://www.tutorialspoint.com/cplusplus/cpp_return_arrays_from_functions.htm
 
-    
+    char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'}; // C-style string from the c language
+    char greeting2[] = "Hello";
+
+    cout << "Greeting message : " << greeting << endl; 
+
+    /* Functions with strings stored in a char array
+        strcpy(s1, s2) -> copies s2 into string 1
+        strcat(s1, s2) -> s1 + s2
+        strlen(s1) -> gets length of string
+        strcomp(s1, s2) -> returns 0 if the strings are equal. <0 if s1<s2. >0 if s1>s2
+        strchr(s1, ch) -> returns pointer to first occurence of char ch in string s1
+        strstr(s1, s2) -> returns first occurance of s2 in s1 
+    */
+
+    // well there's also a string class that does all of the above ^
+    string str1 = "Hello";
+    string str2 = "World";
+    string str3;
+
+    // copy str1 into str3
+    str3 = str1;
+    cout << "str3 : " << str3 << endl;
+
+    // concatenates str1 and str2
+    str3 = str1 + str2;
+    cout << "str1 + str2 : " << str3 << endl;
+
+    // total length of str3 after concatenation
+    int len = str3.size();
+    cout << "str3.size() :  " << len << endl;
+
+
     return 0;
 }
 
