@@ -164,7 +164,31 @@ int main() {
 
     int matrix[8][8]; // two-dimensional arrays still work
 
-    
+    // an array with 5 elements.
+   double bal[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
+   double *p; // create a double var and indicate that it will be a pointer
+
+   p = balance; // have the pointer point to the location of the balance array
+ 
+   // output each array element's value 
+   cout << "Array values using pointer " << endl;
+   
+   for ( int i = 0; i < 5; i++ ) {
+      cout << "*(p + " << i << ") : ";
+      cout << *(p + i) << endl; // *(p + i) will get the address the pointer is pointing and add a byte (+i) for incrementing. 
+                                // the pointer expression will point to the location of element in the array and retrieve the value.   
+   }
+
+   cout << "Array values using balance as address " << endl;
+   
+   for ( int i = 0; i < 5; i++ ) {
+      cout << "*(balance + " << i << ") : ";
+      cout << *(balance + i) << endl;   // *(balance + i) will get the address of the array and like the pointer method point to 
+                                        // value inside of the array by accessing the address next to the first element in the array
+                                        // by incrementing one byte at a time.
+   }
+
+   
 
     return 0;
 }
