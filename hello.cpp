@@ -257,7 +257,7 @@ int main() {
     int  *ptr;
 
     // let us have array address in pointer.
-    ptr = var;
+    ptr = var; // I guess for for arrays you don't need the & symbol to access the address of the array
     
     // poinnter arithmetic: ++, --, +, - . It's pretty intuitive. Cap figure it out.
     for (int i = 0; i < MAX; i++) {
@@ -270,6 +270,29 @@ int main() {
         // point to the next location
         ptr++; // adds a byte to access the adjacent address and gets the next value in the array 
     }
+
+    *var = 1;   // will change the first element in the array since the address of the array is ALSO the same address as 
+                // the FIRST var in the array
+                // NOTE: cannot do pointer arithmetic on the var array because it's not a pointer variable. This is valid 
+                // *(var + 2) because the var is the address of the first element in the array
+
+    // Proof that var is the same address of the first var stored in the array
+    cout << var << endl;
+    cout << &var[0] << endl;
+
+    cout << "This is the first element in the var array : " << var[0] << endl;
+
+    int z1 = 3;
+    int z2 = 2; 
+    int z3 = 4;
+    int *nums[MAX] = { &z1, &z2, &z3};
+    // const char *names[MAX] = { "Zara Ali", "Hina Ali", "Nuha Ali", "Sara Ali" };
+
+    for (int i = 0; i < MAX; i++) {
+        cout << "Value of names[" << i << "] = ";
+        cout << (nums + i) << endl; // cout << (names + i) << endl;
+    }
+
     return 0;
 }
 
