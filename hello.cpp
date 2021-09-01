@@ -4,7 +4,7 @@
 #include <iomanip> // 
 
 using namespace std;
-using std::setw;
+using std::setw; // use std::setw so that setw func is available when we std::cout
 
 int num; // extern keyword says that variable will be 
 
