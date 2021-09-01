@@ -151,6 +151,21 @@ int main() {
     double balance[5] = {1000.0, 2.0, 3.5, 17.0, 50.0}; // specifying the array size between [] is not required.
     cout << "Balance at index 4 (last value) : " << balance[4] << endl;
 
+    int n[10];
+
+    for(int i=0; i<10;i++) {
+        n[i] = i + 100;
+    }
+    cout << "Element" << setw(13) << "Value" << endl;
+
+    for(int j=0; j<10; j++) {
+        cout << setw(7) << j << setw(13) << n[j] << endl;
+    }
+
+    int matrix[8][8]; // two-dimensional arrays still work
+
+    
+
     return 0;
 }
 
