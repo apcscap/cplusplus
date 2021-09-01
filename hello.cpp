@@ -8,6 +8,8 @@ using std::setw; // use std::setw so that setw func is available when we std::co
 
 int num; // extern keyword says that variable will be 
 
+const int MAX = 3;
+
 void func(void); // declare func and declare param type
 static int counter = 10; // Global var
 
@@ -248,6 +250,26 @@ int main() {
 
     cout << "Value of *ip variable : " << *ip << endl; // access the value of address stored in the ip variable.
 
+    int *pointer = NULL; // will set the address value of the pointer to 0. in if statement conditions will be true if there's a 
+                        // val in the pointer
+
+    int  var[MAX] = {10, 100, 200};
+    int  *ptr;
+
+    // let us have array address in pointer.
+    ptr = var;
+    
+    // poinnter arithmetic: ++, --, +, - . It's pretty intuitive. Cap figure it out.
+    for (int i = 0; i < MAX; i++) {
+        cout << "Address of var[" << i << "] = ";
+        cout << ptr << endl; // print the address of the variable 
+
+        cout << "Value of var[" << i << "] = ";
+        cout << *ptr << endl; // prints the value of the variable stored at the address in the pointer
+
+        // point to the next location
+        ptr++; // adds a byte to access the adjacent address and gets the next value in the array 
+    }
     return 0;
 }
 
