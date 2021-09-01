@@ -226,6 +226,27 @@ int main() {
     int len = str3.size();
     cout << "str3.size() :  " << len << endl;
 
+    int  var1;
+    char var2[10];
+
+    cout << "Address of var1 variable: ";
+    cout << &var1 << endl; // the & sign will allow access to the address of the variable
+
+    cout << "Address of var2 variable: ";
+    cout << &var2 << endl;
+
+    // a pointer in c++ and in many other languages is a variable whose value is the address of another variable.
+    int *ip; // pointer denoted by '*' to a variable that stores integers. pattern is same for other variable types
+
+    int nump = 20;
+
+    ip = &nump; // store the address of the nump variable in ip
+
+    cout << "Value of nump variable : " << nump << endl;
+
+    cout << "Address stored in ip variable : " << ip << endl;
+
+    cout << "Value of *ip variable : " << *ip << endl; // access the value of address stored in the ip variable.
 
     return 0;
 }
