@@ -1,8 +1,10 @@
 #include <iostream>
 #include <ctime> // for the time
 #include <cstdlib> // probably to get the rand lib
+#include <iomanip> // 
 
 using namespace std;
+using std::setw;
 
 int num; // extern keyword says that variable will be 
 
@@ -143,8 +145,11 @@ int main() {
     // set seed of rand func
     srand( (unsigned) time(NULL) ); // type casting
 
-    int randNum = rand();
+    int randNum = rand(); // generate a rand number by calling function
     cout << "Random number : " << randNum << endl;
+
+    double balance[5] = {1000.0, 2.0, 3.5, 17.0, 50.0}; // specifying the array size between [] is not required.
+    cout << "Balance at index 4 (last value) : " << balance[4] << endl;
 
     return 0;
 }
