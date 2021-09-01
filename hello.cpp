@@ -19,6 +19,8 @@ int max(int num1, int num2); // declare a function and param names and types
 void swap_pointer(int *num1, int *num2); // declare a func with pointer var
 void swap_reference(int &num1, int &num2);
 
+double getAverage(double arr[], int size); // declare a func that take array as param.
+
 // main() program begins execution here
 int main() {
     cout << "Hello World" << endl; // print func
@@ -165,31 +167,35 @@ int main() {
     int matrix[8][8]; // two-dimensional arrays still work
 
     // an array with 5 elements.
-   double bal[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
-   double *p; // create a double var and indicate that it will be a pointer
+    double bal[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
+    double *p; // create a double var and indicate that it will be a pointer
 
-   p = balance; // have the pointer point to the location of the balance array
- 
-   // output each array element's value 
-   cout << "Array values using pointer " << endl;
-   
-   for ( int i = 0; i < 5; i++ ) {
-      cout << "*(p + " << i << ") : ";
-      cout << *(p + i) << endl; // *(p + i) will get the address the pointer is pointing and add a byte (+i) for incrementing. 
-                                // the pointer expression will point to the location of element in the array and retrieve the value.   
-   }
+    p = bal; // have the pointer point to the location of the balance array
+    
+    // output each array element's value 
+    cout << "Array values using pointer " << endl;
+    
+    for ( int i = 0; i < 5; i++ ) {
+        cout << "*(p + " << i << ") : ";
+        cout << *(p + i) << endl;   // *(p + i) will get the address the pointer is pointing and add a byte (+i) for incrementing. 
+                                    // the pointer expression will point to the location of element in the array and retrieve the value.   
+    }
 
-   cout << "Array values using balance as address " << endl;
-   
-   for ( int i = 0; i < 5; i++ ) {
-      cout << "*(balance + " << i << ") : ";
-      cout << *(balance + i) << endl;   // *(balance + i) will get the address of the array and like the pointer method point to 
-                                        // value inside of the array by accessing the address next to the first element in the array
-                                        // by incrementing one byte at a time.
-   }
+    cout << "Array values using balance as address " << endl;
+    
+    for ( int i = 0; i < 5; i++ ) {
+        cout << "*(balance + " << i << ") : ";
+        cout << *(balance + i) << endl;     // *(balance + i) will get the address of the array and like the pointer method point to 
+                                            // value inside of the array by accessing the address next to the first element in the array
+                                            // by incrementing one byte at a time.
+    }
+    double avg = getAverage(bal, 5);
+    cout << "Average of balance : " << avg << endl;
 
-   
+    // how to return an array with pointers
+    // https://www.tutorialspoint.com/cplusplus/cpp_return_arrays_from_functions.htm
 
+    
     return 0;
 }
 
@@ -229,4 +235,16 @@ void swap_reference(int &num1, int &num2) { // the '&' will copy the reference o
     num2 = temp;
 
     return;
+}
+
+double getAverage(double arr[], int size) { // won't need size if we already know the size of the array. Ex: arr[10]. Can also take array as a pointer such as '*arr'
+    int i, sum = 0;       
+    double avg;          
+
+    for (i = 0; i < size; ++i) {
+        sum += arr[i];
+    }
+    avg = double(sum) / size;
+
+    return avg;
 }
