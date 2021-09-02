@@ -377,6 +377,14 @@ int main() {
     cin >> inp; // cin is connected to the input device, a keyboard. '>>' is the stream extraction operator
     cout << "Your name is: " << inp << endl;
 
+    char errorMsg[] = "Unable to read....";
+ 
+    cerr << "Error message : " << errorMsg << endl; // the cerr obj is connected to a error device which is usually a display screen.
+
+    char logMsg[] = "Unable to read....";
+ 
+    clog << "Error message : " << logMsg << endl; // the clog obj is also connected to a display screen.
+   
     return 0;
 }
 
