@@ -369,6 +369,14 @@ int main() {
     dt = asctime(gmtm);
     cout << "The UTC date and time is:"<< dt << endl;
 
+    // iostream lib contains objs like: cin, cout, cerr and clog objects -- the input, output, un-buffered error stream and buffered error stream, respectively.
+    // called a stream because it's a sequence or flow of bytes from input devices or from the main memory to an output device ex. monitor
+    char inp[50];
+
+    cout << "Please enter your name: ";
+    cin >> inp; // cin is connected to the input device, a keyboard. '>>' is the stream extraction operator
+    cout << "Your name is: " << inp << endl;
+
     return 0;
 }
 
