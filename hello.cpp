@@ -25,6 +25,8 @@ double getAverage(double arr[], int size); // declare a func that take array as 
 
 int *getRandom(); // declare a func that returns a pointer. remember arrays are pointers really.
 
+double valus[] = {10.1, 12.6, 33.1, 24.1, 50.0}; // array for reference example
+
 double& setValues(int i); // returns a reference to the element at index i in the array
 
 // main() program begins execution here
@@ -334,7 +336,20 @@ int main() {
 
     // for using references as parameters look at the swap reference function.
 
-    double vals[] = {10.1, 12.6, 33.1, 24.1, 50.0};
+    cout << "Value before change" << endl;
+    for ( int i = 0; i < 5; i++ ) {
+        cout << "vals[" << i << "] = ";
+        cout << valus[i] << endl;
+    }
+    
+    setValues(1) = 20.23; // change 2nd element
+    setValues(3) = 70.8;  // change 4th element
+    
+    cout << "Value after change" << endl;
+    for ( int i = 0; i < 5; i++ ) {
+        cout << "vals[" << i << "] = ";
+        cout << valus[i] << endl;
+    }
 
     return 0;
 }
@@ -400,4 +415,9 @@ int * getRandom() { // this function returns a pointner
     }
 
     return r; // return the array which is actually a pointer to the first element in the array. remember, Cap?
+}
+
+double& setValues( int i ) {
+   return valus[i];     // return a reference to the ith element. remember arrays are pointers that point to an address. thus we're returning the 
+                        // an address which will be converted into a reference.
 }
