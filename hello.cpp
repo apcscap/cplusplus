@@ -25,6 +25,8 @@ double getAverage(double arr[], int size); // declare a func that take array as 
 
 int *getRandom(); // declare a func that returns a pointer. remember arrays are pointers really.
 
+double& setValues(int i); // returns a reference to the element at index i in the array
+
 // main() program begins execution here
 int main() {
     cout << "Hello World" << endl; // print func
@@ -310,6 +312,29 @@ int main() {
         cout << "*(p + " << i << ") : ";
         cout << *(pntr + i) << endl; // loop through by accessing the adjacent variables by adding a byte to the address
     }
+
+    int numo = 17;
+    int &r = numo; // the '&' sign means that r will be a reference/alias to the numo variable. Must be initalized when declared and can't be NULL and can't be modified.
+
+    // declare simple variables
+    int    intin;
+    double dd;
+ 
+    // declare reference variables
+    int&    reff = intin;
+    double& ss = dd;
+   
+    intin = 5;
+    cout << "Value of i : " << intin << endl;
+    cout << "Value of i reference : " << reff  << endl;
+    
+    dd = 11.7;
+    cout << "Value of d : " << dd << endl;
+    cout << "Value of d reference : " << ss  << endl; 
+
+    // for using references as parameters look at the swap reference function.
+
+    double vals[] = {10.1, 12.6, 33.1, 24.1, 50.0};
 
     return 0;
 }
