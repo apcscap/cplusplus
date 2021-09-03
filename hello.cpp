@@ -29,6 +29,13 @@ double valus[] = {10.1, 12.6, 33.1, 24.1, 50.0}; // array for reference example
 
 double& setValues(int i); // returns a reference to the element at index i in the array
 
+struct Books { // here define a struct which is a data type that can contain other variables of differing data types
+    char title[50];
+    string author;
+    char subject[100];
+    int book_id;
+} bookeses; // i'm guessing here at the end we can innitalize an instance of a struct
+
 // main() program begins execution here
 int main() {
     cout << "Hello World" << endl; // print func
@@ -385,6 +392,45 @@ int main() {
  
     clog << "Error message : " << logMsg << endl; // the clog obj is also connected to a display screen.
    
+    // a struct or structure is a custom data type that let's you combine several data types into one obj
+
+    struct Books Book1; // here we're declaring a Books struct instance called Book1
+    struct Books Book2; // same thing here
+
+    // book one specification
+    strcpy( Book1.title, "Lord of the Rings");
+    Book1.author = "J.R.R Tolkien";
+    strcpy( Book1.subject, "Fantasy");
+    Book1.book_id = 69420;
+
+    strcpy( Book2.title, "1984");
+    Book2.author = "George Orwell";
+    strcpy( Book2.subject, "Fiction");
+    Book2.book_id = 63836;
+
+    strcpy( bookeses.title, "The Fourth Age"); // this book was declared when we declared the struct Books at the top
+    bookeses.author = "By some random guy";
+    strcpy( bookeses.subject, "Science");
+    bookeses.book_id = 2102;
+
+    // Print Book1 info
+   cout << "Book 1 title : " << Book1.title <<endl;
+   cout << "Book 1 author : " << Book1.author <<endl;
+   cout << "Book 1 subject : " << Book1.subject <<endl;
+   cout << "Book 1 id : " << Book1.book_id <<endl;
+
+   // Print Book2 info
+   cout << "Book 2 title : " << Book2.title <<endl;
+   cout << "Book 2 author : " << Book2.author <<endl;
+   cout << "Book 2 subject : " << Book2.subject <<endl;
+   cout << "Book 2 id : " << Book2.book_id <<endl;
+
+   // Print bookeses info
+   cout << "bookeses title : " << bookeses.title <<endl;
+   cout << "bookeses author : " << bookeses.author <<endl;
+   cout << "bookeses subject : " << bookeses.subject <<endl;
+   cout << "bookeses id : " << bookeses.book_id <<endl;
+
     return 0;
 }
 
