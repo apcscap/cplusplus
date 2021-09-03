@@ -36,6 +36,8 @@ struct Books { // here define a struct which is a data type that can contain oth
     int book_id;
 } bookeses; // i'm guessing here at the end we can innitalize an instance of a struct
 
+void printBook( struct Books book ); // declare func that will accept Books struct as parameter
+
 // main() program begins execution here
 int main() {
     cout << "Hello World" << endl; // print func
@@ -431,8 +433,11 @@ int main() {
     cout << "bookeses subject : " << bookeses.subject <<endl;
     cout << "bookeses id : " << bookeses.book_id <<endl;
 
+    printBook( Book1 ); // prints a book by passing struct to function as a parameter
 
-
+    // structs can have pointers too
+    struct Books *BookP;
+    BookP = 
     return 0;
 }
 
@@ -502,4 +507,12 @@ int * getRandom() { // this function returns a pointner
 double& setValues( int i ) {
    return valus[i];     // return a reference to the ith element. remember arrays are pointers that point to an address. thus we're returning the 
                         // an address which will be converted into a reference.
+}
+
+void printBook( struct Books book ) { // prints a book when Books struct is passed in as parameter
+    // Print bookeses info
+    cout << "This is a Book title : " << book.title <<endl;
+    cout << "This is a Book author : " << book.author <<endl;
+    cout << "This is a Book subject : " << book.subject <<endl;
+    cout << "This is a Book id : " << book.book_id <<endl;
 }
