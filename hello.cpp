@@ -38,6 +38,15 @@ struct Books { // here define a struct which is a data type that can contain oth
 
 void printBook( struct Books book ); // declare func that will accept Books struct as parameter
 
+void printBookPointer( struct Books *book ); // declare func that will accept a pointer of a Books struct as param
+
+typedef struct { // a typedef keyword will generate an alias type 
+    char title[50];
+    string author;
+    char subject[100];
+    int book_id;
+} BookType;
+
 // main() program begins execution here
 int main() {
     cout << "Hello World" << endl; // print func
@@ -437,7 +446,22 @@ int main() {
 
     // structs can have pointers too
     struct Books *BookP;
-    BookP = 
+    BookP = &Book2;
+    printBookPointer( BookP ); // call func that print pointer struct
+
+    BookType bookType; // this book is a struct where we created globally. no need to use struct keyboard since we decalred it with typedef keyword
+
+    strcpy( bookType.title, "The Fifth Age"); 
+    bookType.author = "By some random guy";
+    strcpy( bookType.subject, "Science");
+    bookType.book_id = 2102;
+
+    // Print bookeses info
+    cout << "bookType title : " << bookType.title <<endl;
+    cout << "bookType author : " << bookType.author <<endl;
+    cout << "bookType subject : " << bookType.subject <<endl;
+    cout << "bookType id : " << bookType.book_id <<endl;
+
     return 0;
 }
 
@@ -515,4 +539,12 @@ void printBook( struct Books book ) { // prints a book when Books struct is pass
     cout << "This is a Book author : " << book.author <<endl;
     cout << "This is a Book subject : " << book.subject <<endl;
     cout << "This is a Book id : " << book.book_id <<endl;
+}
+
+void printBookPointer( struct Books *book) {
+    // Print bookeses info
+    cout << "This is a Book title : " << book->title <<endl; // NOTE: use '->' when accessing value in struct pointer
+    cout << "This is a Book author : " << book->author <<endl;
+    cout << "This is a Book subject : " << book->subject <<endl;
+    cout << "This is a Book id : " << book->book_id <<endl; 
 }
