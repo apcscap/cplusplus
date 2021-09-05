@@ -28,7 +28,8 @@ class Shape {
 
 class Rectangle: public Shape {
     public:
-        Rectangle(int a=0, int b=0): Shape(a, b) { }
+        Rectangle(int a=0, int b=0): Shape(a, b) { }    // pass the parameters a and b to the Shape constructor which was inherited from the Shape base class
+                                                        // this will intialize the width and height members for us. The empty {} are for if we want to intialize anything else.
 
         int area() {
             cout << "Reactangle class area: " << (width * height) << endl;
