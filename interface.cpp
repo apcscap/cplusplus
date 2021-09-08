@@ -8,6 +8,7 @@ using namespace std;
 
 // usually interface/abstract classes are meant to be a base class for others to inherit
 class Shape {
+    
     public:
         // pure virtual function providing interface framework.
         // having one virtual function will make this class an interface/abstract class.
@@ -19,6 +20,7 @@ class Shape {
         void setHeight(int h) {
             height = h;
         }
+        
     protected:
         int width;
         int height;
