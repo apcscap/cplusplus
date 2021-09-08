@@ -6,6 +6,8 @@ using namespace std;
 // the general description of a class. Don't confuse abstraction with an abstract class. 
 // Absraction is when you add class functions to control class members and properties which helps with controlling data.
 
+// final gpg tonight
+
 // usually interface/abstract classes are meant to be a base class for others to inherit
 class Shape {
     public:
