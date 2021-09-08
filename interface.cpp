@@ -7,6 +7,7 @@ using namespace std;
 // Absraction is when you add class functions to control class members and properties which helps with controlling data.
 
 // final gpg tonight
+
 // usually interface/abstract classes are meant to be a base class for others to inherit
 class Shape {
     public:
