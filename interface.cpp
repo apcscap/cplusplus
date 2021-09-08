@@ -3,7 +3,8 @@ using namespace std;
 
 // Interfaces or abstract classes are classes that describe the behaviors of a C++ class without
 // implementing the actual functionality of that class. Simplified, it's a class that will give 
-// the general description of a class.
+// the general description of a class. Don't confuse abstraction with an abstract class. 
+// Absraction is when you add class functions to control class members and properties which helps with controlling data.
 
 // usually interface/abstract classes are meant to be a base class for others to inherit
 class Shape {
