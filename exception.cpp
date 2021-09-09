@@ -14,6 +14,12 @@ double division(int a, int b) {
     return a/b;
 }
 
+struct CustomException: public exception { // make a custom exception
+    const char* what() const throw() {
+        return "C++ Exception";
+    }
+};
+
 int main(void) {
     int x = 50;
     int y = 0;
@@ -24,6 +30,15 @@ int main(void) {
         cout << z << endl;
     } catch (const char* msg) { // we're writing an exception in which the err thrown will be a char*
         cout << msg << endl;
+    }
+
+    try {
+        throw CustomException(); // throw custom exception
+    } catch (CustomException& e) {
+        cout << "My custom exception caught." << endl;
+        cout << e.what() << endl;
+    } catch (exception& e) {
+
     }
 
     return 0;
