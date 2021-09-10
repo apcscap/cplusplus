@@ -84,7 +84,7 @@ int main() {
     cout << i << " " << j << endl;
 
     auto int month; // auto is a storage type meaning only local scope
-    register int miles = 100000000; // register for local var but max size equal to reg size usually one word
+    register int miles = 100000; // register for local var but max size equal to reg size usually one word
     while(counter--) {
         func();
     }
