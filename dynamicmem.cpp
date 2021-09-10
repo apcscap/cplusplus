@@ -5,6 +5,16 @@ using namespace std;
 // the stack - variables declared in a function will be stored in the stack for functions to use
 // the heap - free memory that will be dynamically allocated when programs run
 
+class Box {
+    public:
+        Box() {
+            cout << "Constructor called!" << endl;
+        }
+        ~Box() { // this is the destructor
+            cout << "Destructor called!" << endl;
+        }
+};
+
 int main(void) {
     double* pvalue = NULL; // Pointer initialized with null
 
@@ -30,9 +40,12 @@ int main(void) {
 
     double** xyvalue = NULL; // Pointer initalized for a two dimensional array
     xyvalue = new double*[4]; // Allocate memory for a 1x4 array
-    
+    // correct way to initialize a two dimensional array https://stackoverflow.com/questions/18273370/the-correct-way-to-initialize-a-dynamic-pointer-to-a-multidimensional-array/18273553
 
     delete [] xyvalue; // Deleting a 2 dimensional array uses same syntax as one dimensional
 
+    Box* myBoxArray = new Box[4];
+    delete [] myBoxArray; // Delete the array from memory
+    
     return 0;
 }
