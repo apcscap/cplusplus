@@ -23,5 +23,16 @@ int main(void) {
 
     delete qvalue; // free up memory
 
+    char* cvalue = NULL; // Pointer initialized with null
+    cvalue = new char[20]; // Request memory for char of 20 characters
+
+    delete [] cvalue; // Delete array pointed to by cvalue
+
+    double** xyvalue = NULL; // Pointer initalized for a two dimensional array
+    xyvalue = new double*[4]; // Allocate memory for a 1x4 array
+    
+
+    delete [] xyvalue; // Deleting a 2 dimensional array uses same syntax as one dimensional
+
     return 0;
 }
