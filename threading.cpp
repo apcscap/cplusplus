@@ -25,7 +25,7 @@ int main () {
     
     for( i = 0; i < NUM_THREADS; i++ ) {
         cout << "main() : creating thread, " << i << endl;
-        rc = pthread_create(&threads[i], NULL, PrintHello, (void *)i); // create a thread passing in reference to init. threads[i] obj
+        rc = pthread_create(&threads[i], NULL, PrintHello, (void *)i);  // create a thread passing in reference to init. threads[i] obj
                                                                         // NULL for thread attributes
                                                                         // the pointer func/routine that will be executed once the process is finished
                                                                         // then the single argument which is passed in as a VOID POINTER 
@@ -36,6 +36,6 @@ int main () {
         }
     }
     pthread_exit(NULL); // exit all threads
-
+    
     return 0;
 }
