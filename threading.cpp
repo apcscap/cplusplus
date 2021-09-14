@@ -11,26 +11,29 @@ using namespace std;
 
 #define NUM_THREADS 5
 
-void *PrintHello(void *threadid) {
+void *PrintHello(void *threadid) { // define a func that RETURNS a POINTER and TAKES a POINTER PARAM of void datatype
     long tid;
-    tid = (long)threadid;
-    cout << "Hello World! Thread ID, " << tid << endl;
-    pthread_exit(NULL);
+    tid = (long)threadid; // cast the param as a long datatype
+    cout << "Hello World! Thread ID, " << tid << endl; // print it
+    pthread_exit(NULL); // then end the executable thread 
 }
 
 int main () {
-    pthread_t threads[NUM_THREADS];
+    pthread_t threads[NUM_THREADS]; // create an NUM_THREADS sized array of pthread obj
     int rc;
-    int i;
+    int i; // counter
     
     for( i = 0; i < NUM_THREADS; i++ ) {
         cout << "main() : creating thread, " << i << endl;
-        rc = pthread_create(&threads[i], NULL, PrintHello, (void *)i);
+        rc = pthread_create(&threads[i], NULL, PrintHello, (void *)i); // create a thread passing in reference to init. threads[i] obj
+                                                                        // NULL for thread attributes
+                                                                        // the pointer func/routine that will be executed once the process is finished
+                                                                        // then the single argument which is passed in as a VOID POINTER 
         
-        if (rc) {
+        if (rc) { // check if we can create the thread
             cout << "Error:unable to create thread," << rc << endl;
             exit(-1);
         }
     }
-    pthread_exit(NULL);
+    pthread_exit(NULL); // exit all threads
 }
